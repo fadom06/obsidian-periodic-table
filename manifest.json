@@ -1,0 +1,11 @@
+{
+    "id": "periodic-table-widget",
+    "name": "Periodic Table Widget",
+    "version": "1.0.0",
+    "minAppVersion": "0.15.0",
+    "description": "Adds a simplistic, color-coded, and interactive periodic table to your notes that links to custom made notes about the respective elements.",
+    "author": "fadom06",
+    "authorUrl": "",
+    "isDesktopOnly": false
+  }
+  
