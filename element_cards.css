@@ -1,0 +1,29 @@
+/* Element Card Style */
+.element-card {
+  background: #2b2f3a;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  color: var(--label, #e8ecf1);
+}
+
+.element-card h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+
+.element-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+}
+
+.bohr-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+    text-align: center;
+}
