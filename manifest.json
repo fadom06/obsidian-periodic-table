@@ -1,12 +1,10 @@
 {
     "id": "periodic-table-widget",
     "name": "Periodic Table Widget",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "minAppVersion": "0.15.0",
-    "description": "Adds a simplistic, color-coded, and interactive periodic table to your notes that links to custom made notes about the respective elements made using a json, and a simplistic atom renderer.",
+    "description": "Adds a simplistic, color-coded, and interactive periodic table to your notes that links to custom made notes about the respective elements.",
     "author": "fadom06",
-    "authorUrl": "",
+    "authorUrl": "https://github.com/fadom06/obsidian-periodic-table",
     "isDesktopOnly": false
   }
-
-  

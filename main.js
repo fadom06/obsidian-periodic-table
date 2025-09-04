@@ -417,9 +417,12 @@ module.exports = class PeriodicTableWidget extends Plugin {
         }
 
         this.elementData = {};
-        await this.loadElementData();
+        this.app.workspace.onLayoutReady(async () => {
+            await this.loadElementData();
+        });
 
         this.registerMarkdownCodeBlockProcessor("bohr", async (source, el) => {
+            await this.ensureElementData();
             const entry = this.lookupElement(source.trim());
             if (!entry) {
                 el.innerHTML = `<p style="color:red">Element "${source}" not found.</p>`;
@@ -433,11 +436,17 @@ module.exports = class PeriodicTableWidget extends Plugin {
                 size: 220,
                 animate: true
             });
-            el.innerHTML = `<div class="bohr-card">${svg}</div>`;
+
+            el.innerHTML = `
+                <div class="bohr-wrapper">
+                <div class="bohr-card">${svg}</div>
+                </div>
+            `;
         });
         
 
          this.registerMarkdownCodeBlockProcessor("element-card", async (source, el) => {
+            await this.ensureElementData();
             const entry = this.lookupElement(source.trim());
             if (!entry) {
                 el.innerHTML = `<p style="color:red">Element "${source}" not found.</p>`;
@@ -481,6 +490,18 @@ module.exports = class PeriodicTableWidget extends Plugin {
         const raw = await this.app.vault.read(file);
         this.elementData = JSON.parse(raw);
         console.log("✅ Loaded element data");
+    }
+
+    async ensureElementData() {
+        if (Object.keys(this.elementData).length) return;
+
+        // Wait until workspace is ready
+        await new Promise(resolve => {
+            if (this.app.workspace.layoutReady) return resolve();
+            this.app.workspace.onLayoutReady(resolve);
+        });
+
+        await this.loadElementData();
     }
 
     lookupElement(key) {
