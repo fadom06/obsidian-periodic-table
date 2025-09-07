@@ -36,7 +36,7 @@ module.exports = class PeriodicTableWidget extends Plugin {
                 return xpos - 1 + extra / cellSize;
             }
 
-            let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 440">`;
+            let svg = `<div class="periodic-table"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 440">`;
 
             order.forEach((key) => {
                 const entry = elements[key];
@@ -61,10 +61,10 @@ module.exports = class PeriodicTableWidget extends Plugin {
                     <text class="cell-label" pointer-events="none"
                         x="${x + cellSize/2}" y="${y + 22}" 
                         text-anchor="middle" font-size="10" font-weight="600" fill="black">${entry.symbol}</text>
-                `;
-            });
+                    `;
+                });
 
-            svg += `</svg>`;
+            svg += `</svg></div>`;
             el.innerHTML = svg;
 
             // create tooltip if not already present
@@ -403,4 +403,3 @@ function renderBohr(opts = {}) {
         </div>
     `;
 }
-

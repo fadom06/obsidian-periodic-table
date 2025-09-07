@@ -70,3 +70,10 @@
   font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans";
   font-size: 8px;
 }
+
+.periodic-table svg {
+  transform: scale(1.5); /* scale periodic table */
+  transform-origin: center center; 
+  display: block;
+  margin: 0 auto;
+}
