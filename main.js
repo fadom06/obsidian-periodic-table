@@ -17,10 +17,11 @@ module.exports = class PeriodicTableWidget extends Plugin {
 
             function normalizeCategory(cat = "") {
                 cat = cat.toLowerCase();
+                if (cat.includes("unknown")) return "unknown_property"; // delete line if color should be predicted property
                 if (cat.includes("alkali metal") && !cat.includes("earth")) return "alkali_metal";
                 if (cat.includes("alkaline earth")) return "alkaline_earth_metal";
-                if (cat.includes("transition metal")) return "transition_metal";
                 if (cat.includes("post-transition")) return "post_transition_metal";
+                if (cat.includes("transition metal")) return "transition_metal";
                 if (cat.includes("metalloid")) return "metalloid";
                 if (cat.includes("nonmetal")) return "reactive_nonmetal";
                 if (cat.includes("noble gas")) return "noble_gas";
@@ -402,3 +403,4 @@ function renderBohr(opts = {}) {
         </div>
     `;
 }
+
