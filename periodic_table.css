@@ -1,0 +1,72 @@
+/* Element Card Style */
+.element-card {
+  background: #2b2f3a;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  color: var(--label, #e8ecf1);
+}
+
+.element-card h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+
+.element-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+}
+
+.bohr-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+    text-align: center;
+}
+
+.element-cell.alkali_metal rect { fill: #ff6b6b; }
+.element-cell.alkaline_earth_metal rect { fill: #ffb347; }
+.element-cell.transition_metal rect { fill: #4dabf7; }
+.element-cell.post_transition_metal rect { fill: #6a5acd; }
+.element-cell.metalloid rect { fill: #20c997; }
+.element-cell.reactive_nonmetal rect { fill: #f9e900; }
+.element-cell.noble_gas rect { fill: #600178; }
+.element-cell.lanthanoid rect { fill: #ff66cc; }
+.element-cell.actinoid rect { fill: #ef476f; }
+.element-cell.unknown_property rect { fill: #5f6c80; }
+
+.element-cell rect {
+  transition: all 0.2s ease;
+  stroke: black;
+  stroke-width: 0.5;
+}
+
+.element-cell rect:hover {
+  filter: brightness(1.25) drop-shadow(0 0 6px rgba(255, 255, 255, 0.35));
+}
+
+.cell-label {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  fill: black !important;
+  text-decoration: none !important;
+  font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans";
+  font-size: 10px;
+}
+
+.cell-label-num {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  fill: black !important;
+  text-decoration: none !important;
+  font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans";
+  font-size: 8px;
+}
