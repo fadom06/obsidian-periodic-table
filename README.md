@@ -2,7 +2,7 @@
 An obsidian plugin that adds a simplistic, color-coded, and interactive periodic table to your notes that links to custom made notes about the respective elements. It can also render simplistic svgs of atoms using json and javascript.
 
 ## Installation
-1. Install main.js, manifest.json, elements.7z (recommended, but optional), element_cards.css and [periodic-table-lookup.json](https://github.com/Bowserinator/Periodic-Table-JSON/blob/master/periodic-table-lookup.json) 
+1. Install main.js, manifest.json, elements.7z (recommended, but optional), periodic_table.css and [periodic-table-lookup.json](https://github.com/Bowserinator/Periodic-Table-JSON/blob/master/periodic-table-lookup.json) 
 2. Create folder under .obsidian/plugins call it "periodic-table-widget" (or whatever).
 3. Move main.js and manifest.json into newly made folder.
 4. Extract elements.7z into vault (if optional step taken, links all cells of periodic table to files)
@@ -21,7 +21,7 @@ Vault/
 │   │       ├── main.js
 │   │       └── manifest.json
 │   └── snippets/
-│       └── elements_cards.css
+│       └── periodic_table.css
 ```
 ## Documentation and Use Cases
 To see the table, open any note and insert it using a [code block](https://help.obsidian.md/syntax#Code+blocks) and the keyword `periodic-table`.
