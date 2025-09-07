@@ -46,3 +46,4 @@ Similar to the `bohr` codeblock, you need to then write either the atom number, 
 
 ## Todo
 - [ ] show electron pairing in bohr models
+  - [ ] color valence electrons red
