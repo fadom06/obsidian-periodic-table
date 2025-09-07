@@ -44,5 +44,5 @@ In addition, if necessary, although it's already done on each and every file ins
 Use a [code block](https://help.obsidian.md/syntax#Code+blocks) and the keyword `element-card` inside the codeblock.
 Similar to the `bohr` codeblock, you need to then write either the atom number, the name of the atom (less "international"), or the atom symbol inside the code block. You should now see a card displayed with all relevant information fetched from the periodic-table-lookup.json
 
-## Modifications and Possibilities
-All colors and animations can be easily modified in the main.js and elements_cards.css file using basic js and css.
+## Todo
+- [ ] show electron pairing in bohr models
