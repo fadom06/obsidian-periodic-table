@@ -109,9 +109,6 @@ module.exports = class PeriodicTableWidget extends Plugin {
             document.addEventListener("click", hideTooltip);
         });
 
-
-
-
         if (!document.getElementById("bohr-plugin-styles")) {
             const style = document.createElement("style");
             style.id = "bohr-plugin-styles";
@@ -141,15 +138,12 @@ module.exports = class PeriodicTableWidget extends Plugin {
                     transform-origin: center;
                     animation: orbit linear infinite;
                 }
-                body {
-                    margin: 0;
-                    background: var(--bg);
-                    color: var(--label);
-                    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+                .bohr-wrapper {
                     display: grid;
                     place-items: center;
-                    min-height: 100vh;
+                    padding: 24px;
                 }
+
                 .wrap {
                     display: grid;
                     gap: 16px;
@@ -167,7 +161,6 @@ module.exports = class PeriodicTableWidget extends Plugin {
                     animation-timing-function: linear;
                     animation-iteration-count: infinite;
                 }
-
                 .card {
                     background: var(--bg);
                     border-radius: 16px;
@@ -175,6 +168,13 @@ module.exports = class PeriodicTableWidget extends Plugin {
                     box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
                 }
                 .bohr-card svg { display:block; }
+                .periodic-table {
+                    margin: 1em auto;
+                }
+                .periodic-table, .bohr-card, .element-card {
+                    display: inline-block;
+                    overflow: visible;
+                }
                 
             `;
             document.head.appendChild(style);
@@ -203,7 +203,7 @@ module.exports = class PeriodicTableWidget extends Plugin {
 
             el.innerHTML = `
                 <div class="bohr-wrapper">
-                <div class="bohr-card">${svg}</div>
+                    <div class="bohr-card">${svg}</div>
                 </div>
             `;
         });
