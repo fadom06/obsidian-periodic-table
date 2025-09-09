@@ -31,7 +31,8 @@ The periodic table should now be visible as an interactive svg.
   <img src="resources/Periodic_Table_Example.png" alt="Periodic Table Example" width="500">
 </p>
 
-When clicking on an element you will be linked to the respective note, given you have extracted or created them (notes are collectively provided in elements.7z).
+When clicking on an element, you will be linked to the respective note, given you have extracted or created them (notes are collectively provided in elements.7z).
+When hovering over an element, you will be shown the respective full name and the molar mass.
 
 You can render atoms using a [code block](https://help.obsidian.md/syntax#Code+blocks) and the keyword `bohr`, inside the codeblock.
 You then need to write either the atom number, the name of the atom (less "international"), or the atom symbol inside the code block.
