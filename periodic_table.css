@@ -72,8 +72,13 @@
 }
 
 .periodic-table svg {
-  transform: scale(1.5); /* scale periodic table */
-  transform-origin: center center; 
+  width: 100%;       /* responsive width */
+  height: auto;      /* keep aspect ratio */
   display: block;
   margin: 0 auto;
+}
+
+.markdown-preview-view .periodic-table svg {
+  transform: scale(1.5); 
+  transform-origin: center center;
 }

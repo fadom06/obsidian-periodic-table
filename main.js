@@ -122,13 +122,28 @@ module.exports = class PeriodicTableWidget extends Plugin {
                     --label: #e8ecf1;
                     --accent: #a0c4ff;
                 }
+
+                /* Bohr model + element card wrappers */
                 .bohr-card {
                     display: inline-block;
                     overflow: visible !important;
                 }
                 .bohr-card svg {
-                    overflow: visible !important;  
+                    overflow: visible !important;
                 }
+                .bohr-wrapper {
+                    display: grid;
+                    place-items: center;
+                    padding: 24px;
+                }
+
+                /* Periodic table wrapper */
+                .periodic-table {
+                    margin: 1em auto;
+                    display: block;
+                }
+
+                /* Atom visuals */
                 .bohr-shell {
                     fill: none;
                     stroke-width: 1;
@@ -138,18 +153,8 @@ module.exports = class PeriodicTableWidget extends Plugin {
                     transform-origin: center;
                     animation: orbit linear infinite;
                 }
-                .bohr-wrapper {
-                    display: grid;
-                    place-items: center;
-                    padding: 24px;
-                }
 
-                .wrap {
-                    display: grid;
-                    gap: 16px;
-                    padding: 24px;
-                }
-
+                /* Orbit animation */
                 @keyframes orbit {
                     from { transform: rotate(0deg); }
                     to   { transform: rotate(360deg); }
@@ -161,21 +166,23 @@ module.exports = class PeriodicTableWidget extends Plugin {
                     animation-timing-function: linear;
                     animation-iteration-count: infinite;
                 }
+
+                /* Card styling */
                 .card {
                     background: var(--bg);
                     border-radius: 16px;
                     padding: 20px;
                     box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
                 }
-                .bohr-card svg { display:block; }
-                .periodic-table {
-                    margin: 1em auto;
+                .bohr-card svg {
+                    display:block;
                 }
-                .periodic-table, .bohr-card, .element-card {
-                    display: inline-block;
-                    overflow: visible;
+
+                /* Tooltip text inside table */
+                .cell-label, .cell-label-num {
+                    pointer-events: none;
+                    user-select: none;
                 }
-                
             `;
             document.head.appendChild(style);
         }
@@ -203,7 +210,7 @@ module.exports = class PeriodicTableWidget extends Plugin {
 
             el.innerHTML = `
                 <div class="bohr-wrapper">
-                    <div class="bohr-card">${svg}</div>
+                <div class="bohr-card">${svg}</div>
                 </div>
             `;
         });
